@@ -18,12 +18,12 @@ public class TodoService {
         todos.add(new Todo(todosCount++, "Rasmus", "Learn FullStack", LocalDate.now().plusYears(3), false));
     }
 
-    public List<Todo> findByUsername(String name) {
-        return todos.stream().filter(u -> u.getUsername().equalsIgnoreCase(name)).toList();
+    public List<Todo> findByUsername(String username) {
+        return todos.stream().filter(u -> u.getUsername().equalsIgnoreCase(username)).toList();
     }
 
-    public void addTodo(String name, String description, LocalDate targetDate, boolean done) {
-        todos.add(new Todo(todosCount++, name, description, targetDate, done));
+    public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
+        todos.add(new Todo(todosCount++, username, description, targetDate, done));
     }
 
     public void deleteById(int id) {
