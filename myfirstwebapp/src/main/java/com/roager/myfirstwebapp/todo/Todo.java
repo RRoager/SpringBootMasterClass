@@ -1,17 +1,25 @@
 package com.roager.myfirstwebapp.todo;
 
 
-import jakarta.validation.constraints.Size;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
 import java.time.LocalDate;
 
+@Entity
 public class Todo {
+    @Id
+    @GeneratedValue
     private int Id;
     private String username;
     //@Size(min = 1, message = "Please enter something in description")
     private String description;
     private LocalDate targetDate;
     private boolean done;
+
+    public Todo() {
+    }
 
     public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
         Id = id;
