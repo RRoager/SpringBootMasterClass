@@ -1,62 +1,22 @@
 package com.roager.firstrestapi.survey;
 
+import jakarta.persistence.Entity;
+import lombok.*;
+
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
+@ToString
 public class Question {
+    @NonNull
     private String id;
+    @NonNull
     private String description;
+    @NonNull
     private List<String> options;
+    @NonNull
     private String correctAnswer;
-
-    public Question() {
-    }
-
-    public Question(String id, String description, List<String> options, String correctAnswer) {
-        this.id = id;
-        this.description = description;
-        this.options = options;
-        this.correctAnswer = correctAnswer;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public List<String> getOptions() {
-        return options;
-    }
-
-    public String getCorrectAnswer() {
-        return correctAnswer;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setOptions(List<String> options) {
-        this.options = options;
-    }
-
-    public void setCorrectAnswer(String correctAnswer) {
-        this.correctAnswer = correctAnswer;
-    }
-
-    @Override
-    public String toString() {
-        return "Question{" +
-                "id='" + id + '\'' +
-                ", description='" + description + '\'' +
-                ", options=" + options +
-                ", correctAnswer='" + correctAnswer + '\'' +
-                '}';
-    }
 }
